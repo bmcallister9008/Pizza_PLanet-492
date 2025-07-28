@@ -1,0 +1,20 @@
+Student A(Darius)
+
+Implement registration API endpoint with input validation - allows for users to create accounts
+Develop backend endpoint to retrieve menu items from database
+
+Student B(Christian & Ty)
+Create/Stylize Homepage
+Create Menu page(layout)
+Create Menu Category Sections (example: pizzas, calzones, pastas)
+Create "Remove Item" button
+Create "Checkout" button
+Create Checkout Page layout
+Create "Pick up or Delivery" selector
+Create "Place order" button
+Add size select Dropdowns and "Add to Cart" buttons
+
+Student C(Blake)
+Create frontend component to display menu items with live data fetch(based on stock levels?)
+Set up user-account database with password validation
+web application testing
