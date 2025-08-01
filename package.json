@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mongodb": "^6.18.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
