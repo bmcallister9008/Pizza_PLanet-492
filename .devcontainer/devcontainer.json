@@ -1,0 +1,27 @@
+{
+  "name": "Pizza Planet Dev",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Web App",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm install --prefix backend",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
