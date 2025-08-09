@@ -6,6 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import Pizza from './models/Pizza.js';
 import Order from './models/Order.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 const app = express();
@@ -65,4 +66,7 @@ async function start() {
     process.exit(1);
   }
 }
+
+app.use('/api', authRoutes);
+
 start();
