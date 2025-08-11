@@ -1,7 +1,26 @@
 {
+  "name": "pizza-planet-backend",
+  "type": "module",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node backend/server.js",
+    "start": "node backend/server.js",
+    "seed": "node backend/scripts/seed.js",
+    "build": "npx vite build --config frontend/vite.config.js && node -e require('fs').copyFileSync('frontend/dist/index.html','frontend/dist/404.html'); require('fs').writeFileSync('frontend/dist/.nojekyll','')"
+  },
   "dependencies": {
-    "nodemailer": "^7.0.5",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.5.0",
     "stripe": "^18.4.0",
-    "type": "module"
+    "axios": "^1.11.0",
+    "nodemailer": "^7.0.5"
+    
   }
 }
+
