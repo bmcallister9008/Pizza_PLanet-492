@@ -1,2 +1,7 @@
 // frontend/vite.config.js
-export default { base: '/Pizza_Planet-492/' }
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
