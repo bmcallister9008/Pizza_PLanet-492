@@ -1,4 +1,4 @@
-# Pizza_PLanet-492
+# Pizza_Planet-492
 
 Our team has been tasked by Pizza_Planet-492 to create a website that provides users with access to a variety of information about the restaurant as well as the ability to place orders through the website’s ordering system. The current list of requirements for this website is as follows:
 
