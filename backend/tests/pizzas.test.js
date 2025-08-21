@@ -3,9 +3,7 @@ import Pizza from '../models/Pizza.js';
 import { app } from '../server.js';
 import { setupDB, cleanupDB, teardownDB } from './setup.js';
 
-beforeAll(setupDB);
-afterEach(cleanupDB);
-afterAll(teardownDB);
+
 
 describe('GET /api/pizzas', () => {
   it('returns pizzas from the database', async () => {
