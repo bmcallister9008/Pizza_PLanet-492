@@ -1,41 +1,10 @@
+// backend/models/Cart.js
 import mongoose from 'mongoose';
 
 const CartItemSchema = new mongoose.Schema(
   {
     pizzaId: { type: mongoose.Schema.Types.ObjectId, ref: 'Pizza', required: true },
-    name: { type: String, required: true },
-    price: { type: Number, required: true, min: 0 },
-    quantity: { type: Number, required: true, min: 1 },
-  },
-  { _id: false }
-);
-
-const CartSchema = new mongoose.Schema(
-  {
-    clientId: { type: String, required: true, unique: true, index: true },
-    items: { type: [CartItemSchema], default: [] },
-  },
-  { timestamps: true }
-);
-
-export default mongoose.model('Cart', CartSchema);
-
-// backend/models/Cart.js
-import mongoose from 'mongoose';
-
-const ItemSchema = new mongoose.Schema(
-  {
-    pizzaId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Pizza',
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      min: 1,
-      default: 1,
-      required: true,
-    },
+    quantity: { type: Number, default: 1, min: 1 },
   },
   { _id: false }
 );
@@ -43,16 +12,10 @@ const ItemSchema = new mongoose.Schema(
 const CartSchema = new mongoose.Schema(
   {
     clientId: { type: String, required: true, index: true, unique: true },
-    items: { type: [ItemSchema], default: [] },
-    updatedAt: { type: Date, default: Date.now },
+    items: { type: [CartItemSchema], default: [] },
   },
-  { collection: 'carts' }
+  { timestamps: true }
 );
 
-CartSchema.pre('save', function (next) {
-  this.updatedAt = new Date();
-  next();
-});
-
-const Cart = mongoose.model('Cart', CartSchema);
-export default Cart;
+// Use existing model if already compiled (prevents OverwriteModelError in dev)
+export default mongoose.models.Cart || mongoose.model('Cart', CartSchema);
