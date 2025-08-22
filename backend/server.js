@@ -10,6 +10,7 @@ import Order from './models/Order.js'
 import authRoutes from './routes/auth.js'
 import payRoutes from './routes/pay.js'
 import { MONGO_URI, PORT as ENV_PORT } from './config/env.js'
+import cartRoutes from './routes/cart.js'
 
 export const app = express()
 const PORT = ENV_PORT || 3000
@@ -24,6 +25,7 @@ app.use(express.json())
 // API routes
 app.use('/api', authRoutes)
 app.use('/api/pay', payRoutes)
+app.use('/api/cart', cartRoutes)
 
 // Static (optional)
 app.use(express.static(path.join(__dirname, '../frontend/src/pages')))
